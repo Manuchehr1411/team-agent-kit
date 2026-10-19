@@ -1,0 +1,52 @@
+<section class="page-heading">
+  <p class="eyebrow">ПОДКЛЮЧЕНИЕ</p><h1>Выбери, где работать.</h1>
+  <p class="lead">Установи Team Agent Kit из публичного репозитория в свой клиент или рабочее пространство команды.</p>
+  <div class="release-line"><span class="version">Версия {{VERSION}}</span><span>Лицензия MIT · Без собственного сервера</span></div>
+  <p class="quiet">Готовый пакет: <a href="https://github.com/Manuchehr1411/team-agent-kit/releases/download/v{{VERSION}}/team-agent-kit-{{VERSION}}.zip">ZIP {{VERSION}}</a> · <a href="https://github.com/Manuchehr1411/team-agent-kit/releases/download/v{{VERSION}}/team-agent-kit-{{VERSION}}.zip.sha256">SHA-256</a>. Для установки из marketplace скачивание ZIP вручную не требуется.</p>
+</section>
+<nav class="client-links" aria-label="Выбрать клиент"><a href="#codex">Codex</a><a href="#claude">Claude Code</a><a href="#chatgpt">ChatGPT Desktop</a><a href="#workspace">Команда в ChatGPT</a></nav>
+<div class="guide">
+  <section class="guide-section" id="codex" aria-labelledby="codex-title">
+    <p class="eyebrow">01 / CODEX</p><h2 id="codex-title">Добавь каталог и установи пакет.</h2>
+    <p>Нужен установленный Codex с командами управления плагинами. В терминале выполни:</p>
+    <pre><code>codex plugin marketplace add https://github.com/Manuchehr1411/team-agent-kit.git
+codex plugin add team-agent-kit@team-agent-kit</code></pre>
+    <p>Начни новую сессию. Выбери навык Team Agent Kit через <code>$</code> или в разделе Plugins. Если команды <code>plugin</code> нет, проверь доступность этой функции в своей версии клиента.</p>
+    <p class="quiet"><a href="https://developers.openai.com/plugins/build/plugins">Документация OpenAI по marketplace</a> · <a href="../updates/#codex">Как обновлять</a></p>
+  </section>
+  <section class="guide-section" id="claude" aria-labelledby="claude-title">
+    <p class="eyebrow">02 / CLAUDE CODE</p><h2 id="claude-title">Установи для своего пользователя.</h2>
+    <p>В терминале с установленным Claude Code выполни:</p>
+    <pre><code>claude plugin marketplace add https://github.com/Manuchehr1411/team-agent-kit.git
+claude plugin install team-agent-kit@team-agent-kit --scope user</code></pre>
+    <p>Начни новую сессию. Для описания задачи вызови <code>/team-agent-kit:describe-task</code>, для отдельного ревью — <code>/team-agent-kit:review-task</code>. Эта инструкция относится к Claude Code; способы подключения в других продуктах Claude отличаются.</p>
+    <p class="quiet"><a href="https://code.claude.com/docs/en/discover-plugins">Документация Claude Code</a> · <a href="../updates/#claude">Как обновлять</a></p>
+  </section>
+  <section class="guide-section" id="chatgpt" aria-labelledby="chatgpt-title">
+    <p class="eyebrow">03 / CHATGPT DESKTOP</p><h2 id="chatgpt-title">Подключи локальный источник.</h2>
+    <p>Этот способ предназначен для локальной работы в Work/Codex в поддерживаемом настольном приложении ChatGPT. Доступность marketplace зависит от клиента и настроек аккаунта.</p>
+    <ol class="steps"><li>Склонируй репозиторий в удобную папку:</li></ol>
+    <pre><code>git clone https://github.com/Manuchehr1411/team-agent-kit.git</code></pre>
+    <ol class="steps" start="2"><li>Открой папку <code>team-agent-kit</code> как локальную рабочую область и перезапусти настольное приложение.</li><li>Открой Plugins, выбери источник Team Agent Kit и установи пакет. Каталог уже находится в репозитории; вручную создавать конфигурацию не нужно.</li><li>Начни новый локальный чат и выбери нужный навык через <code>@</code>.</li></ol>
+    <p>Если источник не появился, проверь, что открыта именно папка библиотеки и скопирован скрытый каталог <code>.agents</code>. Установка в настольном приложении не добавляет пакет автоматически во все веб- и мобильные чаты.</p>
+    <p class="quiet"><a href="https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually">Официальная локальная установка</a> · <a href="../updates/#chatgpt">Как обновлять</a></p>
+  </section>
+  <section class="guide-section" id="workspace" aria-labelledby="workspace-title">
+    <p class="eyebrow">04 / КОМАНДА В CHATGPT</p><h2 id="workspace-title">Импортируй из GitHub.</h2>
+    <p>Понадобится администратор рабочего пространства с доступной функцией импорта marketplace. Открой <strong>Admin → Plugins → Add → Import marketplace</strong> и укажи:</p>
+    <dl class="settings"><dt>Source</dt><dd><code>https://github.com/Manuchehr1411/team-agent-kit</code></dd><dt>Path</dt><dd>Оставь пустым: каталог находится в корне репозитория.</dd><dt>Branch, tag, or commit</dt><dd><code>main</code> — для получения следующих обновлений.</dd></dl>
+    <p>Выполни импорт, проверь его результат и назначь доступ нужным ролям. При запросе авторизации выбери GitHub-аккаунт, который может читать репозиторий.</p>
+    <p>Плагин будет доступен в этом рабочем пространстве. Импорт не предоставляет участникам доступ к чужим Jira, Confluence и другим источникам.</p>
+    <p class="quiet"><a href="https://learn.chatgpt.com/docs/enterprise/plugin-management">Официальная инструкция импорта</a> · <a href="../updates/#workspace">Как обновлять</a></p>
+  </section>
+  <section class="guide-section" aria-labelledby="first-request">
+    <p class="eyebrow">ПЕРВЫЙ ЗАПРОС</p><h2 id="first-request">Передай свои требования.</h2>
+    <pre><code>Используй Team Agent Kit.
+Роль business-analyst, скилл describe-task.
+Подготовь описание по требованиям ниже.
+Контекст команды и проекта пока не задан.
+Верни черновик без записи в трекер.</code></pre>
+    <p>Вызывай только нужный навык. Для текстового результата подключение трекера не требуется.</p>
+    <div class="actions"><a class="button" href="../updates/">Настроить получение обновлений →</a><a class="button secondary" href="../support/">Нужна помощь</a></div>
+  </section>
+</div>

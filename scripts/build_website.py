@@ -8,7 +8,8 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'dist' / 'website'
-PAGES = {'index': 'Главная', 'support': 'Поддержка', 'privacy': 'Конфиденциальность', 'terms': 'Условия'}
+PAGES = {'index': 'Главная', 'install': 'Установка', 'updates': 'Обновления',
+         'support': 'Поддержка', 'privacy': 'Конфиденциальность', 'terms': 'Условия'}
 
 
 def configuration():
@@ -45,10 +46,12 @@ def render(config, key):
     publisher = html.escape(config['publisher_name'])
     repository = html.escape(config['repository_url'], quote=True)
     support = html.escape(config['support_url'], quote=True)
+    version = html.escape(json.loads((ROOT / 'packaging' / 'plugin.json').read_text(encoding='utf-8'))['version'])
     content = (ROOT / 'website' / 'content' / f'{key}.html').read_text(encoding='utf-8')
     replacements = {
         '{{PUBLISHER}}': publisher,
         '{{UPDATED_ON}}': html.escape(config['updated_on']),
+        '{{VERSION}}': version,
         '{{REPOSITORY_BUTTON}}': f'<a class="button" href="{repository}">Открыть репозиторий ↗</a>',
         '{{SUPPORT_BUTTON}}': f'<a class="button" href="{support}">Открыть GitHub Issues ↗</a>',
     }
@@ -70,7 +73,7 @@ def render(config, key):
 <body><a class="skip" href="#main">К содержимому</a>
 <header><div class="shell header-row"><a class="brand" href="{prefix}index.html"><img src="{prefix}assets/logo.svg" alt="" width="42" height="42">Team Agent Kit</a><nav aria-label="Главная навигация">{navigation}</nav></div></header>
 <main class="shell" id="main">{content}</main>
-<footer class="shell"><div class="footer-row"><div><p>Team Agent Kit · {publisher}</p><p class="published">Инструкции, стандарты и примеры для работы с требованиями.</p></div><nav aria-label="Документы и поддержка">{navigation}</nav></div></footer>
+<footer class="shell"><div class="footer-row"><div><p>Team Agent Kit · {publisher}</p><p class="published">Версия {version} · Инструкции и стандарты для работы с требованиями.</p></div><nav aria-label="Документы и поддержка">{navigation}</nav></div></footer>
 </body></html>
 '''
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "team-agent-kit",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Роли бизнес-аналитика и системного аналитика, четыре навыка подготовки и проверки задач, общие стандарты и учебные профили.",
   "author": {
     "name": "Manuchehr1411",

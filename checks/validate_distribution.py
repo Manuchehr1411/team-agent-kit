@@ -116,6 +116,10 @@ def main():
         archive = ROOT / 'dist' / f"team-agent-kit-{portable['version']}.zip"
         if not archive.is_file():
             raise ValueError('Нет ZIP: сначала выполните python scripts/build_plugin.py')
+        checksum = archive.with_suffix('.zip.sha256')
+        expected_checksum = f'{hashlib.sha256(archive.read_bytes()).hexdigest()}  {archive.name}\n'
+        if not checksum.is_file() or checksum.read_text(encoding='utf-8') != expected_checksum:
+            raise ValueError('Отсутствует или не совпадает контрольная сумма ZIP')
         problems, links = markdown_links(PACKAGE)
         if problems:
             raise ValueError(f'Битые ссылки установленного пакета: {problems}')

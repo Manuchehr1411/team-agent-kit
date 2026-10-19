@@ -140,6 +140,8 @@ def sync(check_only=False):
                 entry.compress_type = zipfile.ZIP_DEFLATED
                 entry.external_attr = 0o644 << 16
                 bundle.writestr(entry, data)
+        digest = hashlib.sha256(archive.read_bytes()).hexdigest()
+        archive.with_suffix('.zip.sha256').write_text(f'{digest}  {archive.name}\n', encoding='utf-8')
         print(f'ZIP: {archive.relative_to(ROOT)}')
     for source, target in {
         'packaging/openai-marketplace.json': '.agents/plugins/marketplace.json',

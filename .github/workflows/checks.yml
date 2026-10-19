@@ -1,0 +1,31 @@
+name: Проверки библиотеки
+
+"on":
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить исходники
+        uses: actions/checkout@v6
+      - name: Проверить структуру и ссылки
+        run: python3 checks/validate.py
+      - name: Проверить соответствие пакета исходникам
+        run: python3 scripts/build_plugin.py --check
+      - name: Собрать ZIP и контрольную сумму
+        run: python3 scripts/build_plugin.py
+      - name: Проверить пакет для подачи
+        run: python3 checks/validate_distribution.py --submission
+      - name: Проверить ограничения метаданных
+        run: python3 checks/test_listing_metadata.py
+      - name: Собрать сайт
+        run: python3 scripts/build_website.py
+      - name: Проверить страницы и ссылки
+        run: python3 checks/validate_website.py

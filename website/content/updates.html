@@ -1,0 +1,44 @@
+<section class="page-heading">
+  <p class="eyebrow">ОБНОВЛЕНИЯ</p><h1>Получай новые версии.</h1>
+  <p class="lead">Доступна версия {{VERSION}}. Обнови источник в своём клиенте, затем проверь установленный пакет.</p>
+  <div class="actions"><a class="button" href="https://github.com/Manuchehr1411/team-agent-kit/releases/latest">Последний выпуск ↗</a><a class="button secondary" href="https://github.com/Manuchehr1411/team-agent-kit/blob/main/CHANGELOG.md">Что изменилось</a><a class="button secondary" href="../install/">Установить впервые</a></div>
+  <p class="quiet">Обновление файлов в GitHub само по себе не меняет каждую установленную копию. Способ обновления зависит от того, как подключён пакет.</p>
+</section>
+<nav class="client-links" aria-label="Выбрать способ обновления"><a href="#codex">Codex</a><a href="#claude">Claude Code</a><a href="#chatgpt">ChatGPT Desktop</a><a href="#workspace">Команда в ChatGPT</a></nav>
+<div class="guide">
+  <section class="guide-section" id="codex" aria-labelledby="codex-update">
+    <p class="eyebrow">01 / CODEX</p><h2 id="codex-update">Обнови каталог и установку.</h2>
+    <pre><code>codex plugin marketplace upgrade team-agent-kit
+codex plugin add team-agent-kit@team-agent-kit</code></pre>
+    <p>Первая команда обновляет Git-источник marketplace, вторая устанавливает пакет из актуального каталога. Начни новую сессию и проверь версию Team Agent Kit в Plugins или выводе <code>codex plugin list</code>.</p>
+    <p>Если источник закреплён на конкретном commit или теге, он останется на выбранной ревизии. Для получения следующих изменений выбирай ветку <code>main</code>.</p>
+    <p class="quiet"><a href="https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli">Управление marketplace в Codex</a></p>
+  </section>
+  <section class="guide-section" id="claude" aria-labelledby="claude-update">
+    <p class="eyebrow">02 / CLAUDE CODE</p><h2 id="claude-update">Обнови источник и плагин.</h2>
+    <pre><code>claude plugin marketplace update team-agent-kit
+claude plugin update team-agent-kit@team-agent-kit --scope user
+claude plugin list</code></pre>
+    <p>Команды соответствуют установке для своего пользователя из нашей инструкции. При другой области установки укажи её вместо <code>user</code>. Перезапусти сессию, чтобы применить новую версию.</p>
+    <p class="quiet"><a href="https://code.claude.com/docs/en/discover-plugins#keep-plugins-updated">Обновления Claude Code</a></p>
+  </section>
+  <section class="guide-section" id="chatgpt" aria-labelledby="chatgpt-update">
+    <p class="eyebrow">03 / CHATGPT DESKTOP</p><h2 id="chatgpt-update">Обнови локальную копию.</h2>
+    <p>В терминале внутри склонированной папки <code>team-agent-kit</code> выполни:</p>
+    <pre><code>git pull --ff-only</code></pre>
+    <p>Перед этим сохрани свои незавершённые правки. Если Git сообщает о конфликте или расхождении веток, сохрани работу и разберись с причиной; инструкция не требует принудительного сброса файлов.</p>
+    <p>Перезапусти ChatGPT Desktop, открой Plugins и проверь версию. Если в установленной копии осталась старая версия, установи пакет заново из того же локального источника. Начни новый чат с нужным навыком.</p>
+  </section>
+  <section class="guide-section" id="workspace" aria-labelledby="workspace-update">
+    <p class="eyebrow">04 / КОМАНДА В CHATGPT</p><h2 id="workspace-update">Синхронизируй marketplace.</h2>
+    <p>Администратор открывает <strong>Admin → Plugins → Marketplaces → Team Agent Kit → Sync now</strong>, затем проверяет отчёт синхронизации и версию импортированного плагина.</p>
+    <p>Новые импорты по умолчанию проверяют обновления ежедневно. Для получения изменений источник должен следовать ветке <code>main</code>; закреплённый commit остаётся на своей версии. Права участников и настройки подключённых сервисов проверяются отдельно.</p>
+    <p class="quiet"><a href="https://learn.chatgpt.com/docs/enterprise/plugin-management#keep-plugins-up-to-date">Синхронизация рабочего пространства</a></p>
+  </section>
+  <section class="guide-section" aria-labelledby="check-update">
+    <p class="eyebrow">ПРОВЕРКА</p><h2 id="check-update">Убедись, что обновление применилось.</h2>
+    <ol class="steps"><li>Сравни установленную версию с доступной на этой странице: <strong>{{VERSION}}</strong>.</li><li>Проверь наличие четырёх навыков: describe-task, decompose-task, define-dor-dod и review-task.</li><li>В новом чате выполни простой запрос на описание задачи по своим требованиям.</li></ol>
+    <p>Если что-то не работает, укажи клиент, установленную версию, способ подключения и текст ошибки. Для обращения используй обезличенный пример.</p>
+    <div class="actions"><a class="button" href="../support/">Обратиться за поддержкой →</a></div>
+  </section>
+</div>
