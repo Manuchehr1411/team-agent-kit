@@ -105,7 +105,7 @@ def main():
         print(f'ОШИБКА: {exc}', file=sys.stderr)
         return 1
     print(f'Сайт: dist/website; файлов: {len(files)}; собран локально')
-    print('Планируемые URL (доступность после деплоя ещё не подтверждена):')
+    print('URL из конфигурации (команда сборки не проверяет сетевую доступность):')
     print(json.dumps(listing_urls(config), ensure_ascii=False, indent=2))
     return 0
 

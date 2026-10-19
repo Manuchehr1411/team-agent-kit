@@ -6,7 +6,7 @@
 
 Текущая сборка: 0.2.2. Публичная подача в каталог OpenAI сейчас не подтверждена: [сообщение портала и оставшиеся требования](docs/publication-status.md). Локальная установка пакета не означает одобрения публикации.
 
-Для публичного сайта, поддержки, privacy policy и terms подготовлены [исходники и инструкция GitHub Pages](docs/github-pages.md).
+Публичный [сайт проекта](https://manuchehr1411.github.io/team-agent-kit/) содержит поддержку, privacy policy и terms. [Исходники и инструкция GitHub Pages](docs/github-pages.md). Для повторной загрузки ZIP в ChatGPT используй [инструкцию подачи версии 0.2.2](docs/resubmission.md).
 
 Библиотека распространяется по [MIT](LICENSE). Можно использовать и изменять её в личных и коммерческих проектах с сохранением уведомления об авторстве и лицензии. [Пояснение на русском](docs/licensing.md).
 
@@ -149,6 +149,7 @@ team-agent-kit/
 ├── docs/publication-status.md
 ├── docs/github-pages.md
 ├── docs/licensing.md
+├── docs/resubmission.md
 ├── standards/
 │   ├── source-policy.md
 │   ├── requirements-quality.md
