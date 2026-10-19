@@ -1,0 +1,9 @@
+{
+  "name": "team-agent-kit",
+  "version": "0.2.1",
+  "description": "Роли бизнес-аналитика и системного аналитика и четыре навыка подготовки и проверки задач.",
+  "author": {
+    "name": "Team Agent Kit"
+  },
+  "keywords": ["business-analysis", "system-analysis", "requirements", "task-review"]
+}

@@ -1,0 +1,23 @@
+# Второй независимый синтетический проект: учебный каталог материалов.
+schema_version: 1
+id: catalog-project
+team: example-team
+roles:
+  - business-analyst
+  - system-analyst
+default_role: business-analyst
+skills:
+  enable: []
+  disable:
+    - define-dor-dod
+standards:
+  - profiles/projects/catalog-project/sources.md
+sources:
+  - id: catalog-baseline
+    path: profiles/projects/catalog-project/sources.md
+    status: approved
+    authority: Только учебные требования каталога и дополнение к его DoD.
+issue_types: profiles/projects/catalog-project/issue-types.yaml
+tracker:
+  kind: none
+  project_key: null

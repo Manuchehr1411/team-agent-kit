@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "team-agent-kit",
+  "version": "0.2.1",
+  "description": "Роли бизнес-аналитика и системного аналитика, четыре навыка подготовки и проверки задач, общие стандарты и учебные профили.",
+  "author": {
+    "name": "Team Agent Kit"
+  },
+  "keywords": ["business-analysis", "system-analysis", "requirements", "task-review"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Team Agent Kit",
+        "shortDescription": "Описание и проверка задач",
+        "longDescription": "Общая методика работы с требованиями: описание задач, необходимые подзадачи, DoR/DoD и независимое ревью. Доступны роли бизнес-аналитика и системного аналитика. Источники и инструменты подключает сам пользователь.",
+        "developerName": "Team Agent Kit",
+        "category": "Productivity",
+        "capabilities": [],
+        "logo": "./assets/logo.svg",
+        "composerIcon": "./assets/logo.svg",
+        "defaultPrompt": [
+          "В роли бизнес-аналитика помоги описать задачу по моим требованиям.",
+          "В роли системного аналитика подготовь необходимые подзадачи без записи в трекер.",
+          "Независимо проверь описание и покрытие требований декомпозицией."
+        ]
+      }
+    }
+  }
+}

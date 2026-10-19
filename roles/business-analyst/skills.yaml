@@ -1,0 +1,10 @@
+schema_version: 1
+role: business-analyst
+available_skills:
+  - describe-task
+  - define-dor-dod
+  - review-task
+default_skills:
+  - describe-task
+  - define-dor-dod
+  - review-task

@@ -1,0 +1,25 @@
+# Синтетический проект списка заявок; реального подключения к трекеру нет.
+schema_version: 1
+id: example-project
+team: example-team
+roles:
+  - business-analyst
+  - system-analyst
+default_role: system-analyst
+skills:
+  enable: []
+  disable: []
+standards: []
+sources:
+  - id: request-list-baseline
+    path: profiles/projects/example-project/sources.md
+    status: approved
+    authority: Учебный контекст списка заявок и источник синтетических требований.
+  - id: task-format-example
+    path: examples/task-description.md
+    status: example
+    authority: Пример оформления; требования применимы только при явном выборе этого кейса.
+issue_types: profiles/projects/example-project/issue-types.yaml
+tracker:
+  kind: unconfigured
+  project_key: null

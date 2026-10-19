@@ -1,0 +1,14 @@
+{
+  "name": "team-agent-kit",
+  "description": "Общая библиотека аналитических ролей и навыков подготовки задач.",
+  "owner": {
+    "name": "Team Agent Kit"
+  },
+  "plugins": [
+    {
+      "name": "team-agent-kit",
+      "source": "./plugins/team-agent-kit",
+      "description": "Описание задач, декомпозиция, DoR/DoD и независимое ревью."
+    }
+  ]
+}

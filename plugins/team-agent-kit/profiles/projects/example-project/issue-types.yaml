@@ -1,0 +1,25 @@
+schema_version: 1
+project: example-project
+status: unresolved
+metadata_source: null
+categories:
+  development:
+    type_name: null
+    type_id: null
+    is_subtask: null
+  design:
+    type_name: null
+    type_id: null
+    is_subtask: null
+  analysis:
+    type_name: null
+    type_id: null
+    is_subtask: null
+  testing:
+    type_name: null
+    type_id: null
+    is_subtask: null
+  subbug:
+    type_name: null
+    type_id: null
+    is_subtask: null

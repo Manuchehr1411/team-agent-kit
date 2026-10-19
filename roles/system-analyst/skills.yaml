@@ -1,0 +1,12 @@
+schema_version: 1
+role: system-analyst
+available_skills:
+  - describe-task
+  - decompose-task
+  - define-dor-dod
+  - review-task
+default_skills:
+  - describe-task
+  - decompose-task
+  - define-dor-dod
+  - review-task

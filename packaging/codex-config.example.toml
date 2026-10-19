@@ -1,0 +1,4 @@
+# Фрагмент для объединения с config.toml после установки плагина.
+# Это поддерживаемая настройка Codex, а не формат профиля библиотеки.
+[plugins."team-agent-kit@team-agent-kit"]
+enabled = true

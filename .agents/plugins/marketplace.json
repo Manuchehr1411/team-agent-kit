@@ -1,0 +1,20 @@
+{
+  "name": "team-agent-kit",
+  "interface": {
+    "displayName": "Team Agent Kit"
+  },
+  "plugins": [
+    {
+      "name": "team-agent-kit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/team-agent-kit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

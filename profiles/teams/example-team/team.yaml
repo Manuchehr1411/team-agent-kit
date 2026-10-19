@@ -1,0 +1,17 @@
+# Учебная команда; это профиль библиотеки, не настройки Codex.
+schema_version: 1
+id: example-team
+roles:
+  - business-analyst
+  - system-analyst
+default_role: business-analyst
+skills:
+  enable: []
+  disable: []
+standards:
+  - profiles/teams/example-team/standards.md
+sources:
+  - id: team-standard
+    path: profiles/teams/example-team/standards.md
+    status: approved
+    authority: Учебные дополнения к общему DoR и DoD.
