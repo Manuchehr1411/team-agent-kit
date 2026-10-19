@@ -1,19 +1,25 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "team-agent-kit",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Роли бизнес-аналитика и системного аналитика, четыре навыка подготовки и проверки задач, общие стандарты и учебные профили.",
   "author": {
-    "name": "Team Agent Kit"
+    "name": "Manuchehr1411",
+    "url": "https://github.com/Manuchehr1411"
   },
-  "keywords": ["business-analysis", "system-analysis", "requirements", "task-review"],
+  "keywords": [
+    "business-analysis",
+    "system-analysis",
+    "requirements",
+    "task-review"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Team Agent Kit",
         "shortDescription": "Описание и проверка задач",
         "longDescription": "Общая методика работы с требованиями: описание задач, необходимые подзадачи, DoR/DoD и независимое ревью. Доступны роли бизнес-аналитика и системного аналитика. Источники и инструменты подключает сам пользователь.",
-        "developerName": "Team Agent Kit",
+        "developerName": "Manuchehr1411",
         "category": "Productivity",
         "capabilities": [],
         "logo": "./assets/logo.svg",
@@ -25,5 +31,8 @@
         ]
       }
     }
-  }
+  },
+  "license": "MIT",
+  "homepage": "https://manuchehr1411.github.io/team-agent-kit/",
+  "repository": "https://github.com/Manuchehr1411/team-agent-kit"
 }

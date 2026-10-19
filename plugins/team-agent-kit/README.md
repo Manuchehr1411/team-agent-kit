@@ -30,6 +30,10 @@ claude plugin install team-agent-kit@team-agent-kit
 
 Каталоги marketplace.json поставляются в репозитории рядом с папкой plugins/. ZIP содержит сам плагин, а не весь репозиторий с каталогами установки.
 
+## Лицензия
+
+Пакет распространяется по [MIT](LICENSE): разрешены использование, изменение и распространение с сохранением уведомления об авторстве и лицензии. [Пояснение на русском](docs/licensing.md). Поддержка и публичные документы доступны на [сайте проекта](https://manuchehr1411.github.io/team-agent-kit/).
+
 ## Роли и профили
 
 Доступны [business-analyst](roles/business-analyst/role.md) и [system-analyst](roles/system-analyst/role.md). Ответственность и ограничения задаёт role.md; skills.yaml перечисляет подходящие навыки. Эти файлы не создают агентов и не меняют права инструментов.

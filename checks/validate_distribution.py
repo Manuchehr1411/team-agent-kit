@@ -84,6 +84,14 @@ def main():
         identities = {(doc['name'], doc['version']) for doc in (portable, claude, compatibility)}
         if len(identities) != 1:
             raise ValueError('Манифесты описывают разные плагины/версии')
+        for field in ('license', 'homepage', 'repository'):
+            if any(doc.get(field) != portable.get(field) for doc in (claude, compatibility)):
+                raise ValueError(f'Манифесты содержат разные значения {field}')
+        if portable.get('license') == 'MIT':
+            if expected.get('LICENSE') != (ROOT / 'LICENSE').read_bytes():
+                raise ValueError('В пакете отсутствует актуальный текст лицензии')
+            if 'docs/licensing.md' not in expected:
+                raise ValueError('В пакете отсутствует пояснение лицензии на русском')
         for relative in ('.agents/plugins/marketplace.json', '.claude-plugin/marketplace.json'):
             catalog = json.loads((ROOT / relative).read_text(encoding='utf-8'))
             entry = catalog['plugins'][0]

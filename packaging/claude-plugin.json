@@ -1,9 +1,18 @@
 {
   "name": "team-agent-kit",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Роли бизнес-аналитика и системного аналитика и четыре навыка подготовки и проверки задач.",
   "author": {
-    "name": "Team Agent Kit"
+    "name": "Manuchehr1411",
+    "url": "https://github.com/Manuchehr1411"
   },
-  "keywords": ["business-analysis", "system-analysis", "requirements", "task-review"]
+  "keywords": [
+    "business-analysis",
+    "system-analysis",
+    "requirements",
+    "task-review"
+  ],
+  "license": "MIT",
+  "homepage": "https://manuchehr1411.github.io/team-agent-kit/",
+  "repository": "https://github.com/Manuchehr1411/team-agent-kit"
 }

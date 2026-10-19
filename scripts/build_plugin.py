@@ -40,6 +40,7 @@ def inputs():
             mapping[file.resolve()] = Path(target) / file.relative_to(ROOT / source)
     single_files = {
         'docs/profile-format.md': 'docs/profile-format.md',
+        'docs/licensing.md': 'docs/licensing.md',
         'checks/scenarios.md': 'checks/scenarios.md',
         'checks/results.md': 'checks/results.md',
         'CHANGELOG.md': 'CHANGELOG.md',
@@ -97,6 +98,7 @@ def expected_files():
         raise ValueError('Идентификатор и версия манифестов должны совпадать')
     # Совместимый манифест Codex использует ту же идентичность и UI-метаданные.
     compatibility = {key: portable[key] for key in ('name', 'version', 'description', 'author')}
+    compatibility.update({key: portable[key] for key in ('homepage', 'repository', 'license', 'keywords') if key in portable})
     compatibility['skills'] = './skills/'
     compatibility.update(portable['extensions']['com.openai'])
     result['.codex-plugin/plugin.json'] = (json.dumps(compatibility, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
